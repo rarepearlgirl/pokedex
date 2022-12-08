@@ -13,7 +13,7 @@ let pokemonList = [
     HP: 44,
     height: 0.5,
     number: 7,
-    types: "Water",
+    types: ["Water"],
   },
   {
     name: "Ponyta",
