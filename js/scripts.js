@@ -5,7 +5,7 @@ let pokemonList = [
     HP: 45,
     height: 0.7,
     number: 1,
-    type: ["grass", "poison]
+    type: ["grass", "poison"]
  },
   {
     name: "Squirtle",
