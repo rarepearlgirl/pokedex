@@ -5,7 +5,7 @@ let pokemonList = [
     HP: 45,
     height: 0.7,
     number: 1,
-    type: ["grass", "poison"]
+    types: ["grass", "poison"]
  },
   {
     name: "Squirtle",
@@ -13,7 +13,7 @@ let pokemonList = [
     HP: 44,
     height: 0.5,
     number: 7,
-    type: "Water",
+    types: "Water",
   },
   {
     name: "Ponyta",
@@ -21,7 +21,7 @@ let pokemonList = [
     HP: 50,
     height: 1,
     number: 77,
-    type: "fire"
+    types: "fire"
   },
   
   {
@@ -30,7 +30,7 @@ let pokemonList = [
     HP: 70,
     height: 1.8,
     number: 319,
-    type: ["dark", "water"]
+    types: ["dark", "water"]
   },
 
 ];
