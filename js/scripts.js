@@ -1,12 +1,12 @@
 let pokemonList = [
-  { 
+  {
     name: "Bulbasaur",
     attack: 49,
     HP: 45,
     height: 0.7,
     number: 1,
-    types: ["grass", "poison"]
- },
+    types: ["grass", "poison"],
+  },
   {
     name: "Squirtle",
     attack: 48,
@@ -21,16 +21,14 @@ let pokemonList = [
     HP: 50,
     height: 1,
     number: 77,
-    types: "fire"
+    types: "fire",
   },
-  
   {
     name: "Sharpedo",
     attack: 120,
     HP: 70,
     height: 1.8,
     number: 319,
-    types: ["dark", "water"]
+    types: ["dark", "water"],
   },
-
 ];
