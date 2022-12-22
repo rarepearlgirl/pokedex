@@ -43,8 +43,8 @@ for (let i = 0; i < pokemonList.length; i++) {
 } 
 
     else  {
-      console.log(pokemonList[i].name + " (height: " + pokemonList[i].height + ")"); 
-      document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ")" + " <br> "); 
+       console.log(pokemonList[i].name + " (height: " + pokemonList[i].height + ")"); 
+       document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ")" + " <br> "); 
 }
-      
+/*the <br> tags are here to help each item on the list be displayed on a new line*/      
 }
