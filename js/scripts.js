@@ -34,17 +34,23 @@ let pokemonList = [
 ];
 
 /*the loop code should be based on the variable length not exceeding it!*/
+const pokemonsUl = document.createElement("ul");
+document.body.appendChild(pokemonsUl);
 
-for (let i = 0; i < pokemonList.length; i++) { 
-    if (pokemonList[i].height > 1) {
-       console.log(pokemonList[i].name + " (height: " + pokemonList[i].height + ") - Wow that`s big!"); 
-       document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") - Wow that`s big!" + " <br> "); 
-       continue; 
-} 
+for (let i = 0; i < pokemonList.length; i++) {
+  const pokemonLi = document.createElement("li");
+  if (pokemonList[i].height > 1) {
+    pokemonLi.innerText =
+      pokemonList[i].name +
+      " (height: " +
+      pokemonList[i].height +
+      ") - Wow that`s big!";
+    pokemonsUl.appendChild(pokemonLi);
+    continue;
+  }
 
-    else  {
-       console.log(pokemonList[i].name + " (height: " + pokemonList[i].height + ")"); 
-       document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ")" + " <br> "); 
-}
-/*the <br> tags are here to help each item on the list be displayed on a new line*/      
+  pokemonLi.innerText =
+    pokemonList[i].name + " (height: " + pokemonList[i].height + ")";
+
+  pokemonsUl.appendChild(pokemonLi);
 }
