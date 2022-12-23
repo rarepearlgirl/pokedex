@@ -35,10 +35,13 @@ let pokemonList = [
 
 /*the loop code should be based on the variable length not exceeding it!*/
 const pokemonsUl = document.createElement("ul");
+pokemonsUl.setAttribute("class","pokemons-list");
+
 document.body.appendChild(pokemonsUl);
 
 for (let i = 0; i < pokemonList.length; i++) {
   const pokemonLi = document.createElement("li");
+  pokemonLi.setAttribute("class","pokemons-items-list");
   if (pokemonList[i].height > 1) {
     pokemonLi.innerText =
       pokemonList[i].name +
