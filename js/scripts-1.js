@@ -31,9 +31,36 @@ let pokemonList = [
     number: 319,
     types: ["dark", "water"],
   },
+  { 
+    name: "Pikachu",
+    HP: 70,
+    height: 0.7,
+    number: 319,
+    types: ["dark", "water"]
+  },
 ];
 
-document.write(" <ul class = pokemons-list> ");
+document.write("<ul class = pokemons-list> ");
+
+let pokemonRepository = (function() {
+let pokemonList = [];
+
+  function add (pokemon) {
+  pokemonList.push(pokemon);
+}; 
+
+function getAll() {
+  return pokemonList;
+}
+
+return {
+  add: add,
+  getAll: getAll
+};
+})();
+
+console.log(pokemonRepository.getAll()); 
+pokemonRepository.add({ name: 'Pikachu' });
 
 pokemonList.forEach(function(myPokemonList){
   if (myPokemonList.height >= 1){
