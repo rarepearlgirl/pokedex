@@ -1,5 +1,5 @@
 let pokemonRepository = (function () {
-  let repository = [
+  let pokemonList = [
     {
       name: "Bulbasaur",
       attack: 49,
@@ -22,7 +22,7 @@ let pokemonRepository = (function () {
       HP: 50,
       height: 1,
       number: 77,
-      types: "fire",
+      types: ["fire"],
     },
     {
       name: "Sharpedo",
@@ -34,54 +34,57 @@ let pokemonRepository = (function () {
     },
   ];
 
-  function add(pokemon) {
-      if (
-        typeof pokemon === "object" &&
-        "name" in pokemon &&
-        "height" in pokemon &&
-        "types" in pokemon
-      ) {
-        repository.push(pokemon);
-      } else {
-        console.log("pokemon is not correct");
-      }
-    }
-  
   function getAll() {
-    return repository;
+    return pokemonList;
   }
 
-  function showDetails(listpokemon) {
-        console.log(listpokemon)
-        };
-
-  function addListItem(pokemon){
-  let pokemonList = document.querySelector('.pokemon-list');
-  let listpokemon = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add("button-class");
-  listpokemon.appendChild(button);
-  pokemonList.appendChild(listpokemon);
-  // call the showDetails function there, passing the pokemon object as a parameter when a Pokémon is clicked, same parameter as addListItem()
-  button.addEventListener ('click', function showDetails(listpokemon) {
-    console.log(pokemon);
-  });
-}
-
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
 
   return {
-  add: add,
-  getAll: getAll,
-  addListItem: addListItem
+    getAll: getAll,
+    add: add,
   };
 })();
-  
-
-pokemonRepository.add({name: "Pikachu", height: 0.7, types: ["dark", "water"] });
 
 console.log(pokemonRepository.getAll());
-
-pokemonRepository.getAll().forEach(function(pokemon){
-pokemonRepository.addListItem(pokemon);
+pokemonRepository.add({
+  name: "Pikachu",
+  attack: 120,
+  HP: 70,
+  height: 0.8,
+  number: 319,
+  types: ["electric"],
 });
+console.log(pokemonRepository.getAll());
+
+document.write("<ul class=pokemons-list> ");
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+  if (pokemon.height >= 1) {
+    console.log(
+      pokemon.name + " (height: " + pokemon.height + ")- Wow, that`s big!"
+    );
+    document.write(
+      " <li class = pokemons-items-list> " +
+        pokemon.name +
+        " (height: " +
+        pokemon.height +
+        ") - Wow, that`s big!" +
+        "</li>"
+    );
+  } else {
+    console.log(pokemon.name + " (height: " + pokemon.height + ") ");
+    document.write(
+      " <li class = pokemons-items-list> " +
+        pokemon.name +
+        " (height: " +
+        pokemon.height +
+        ") " +
+        "</li>"
+    );
+  }
+});
+
+document.write(" </ul>");
