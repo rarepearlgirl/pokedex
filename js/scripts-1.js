@@ -63,7 +63,7 @@ let pokemonRepository = (function () {
   // call the showDetails function there, passing the pokemon object as a parameter when a Pokémon is clicked, same parameter as addListItem()
     button.addEventListener ('click', function showDetails(listpokemon) {
     console.log(pokemon); 
-    // added obect above
+    // added the whole obect
   });
 }
   return {
