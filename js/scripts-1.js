@@ -49,8 +49,8 @@ let pokemonRepository = (function () {
   function getAll() {
     return repository;
   }
-  function showDetails(pokemonRepository) {
-    console.log(listpokemon)
+  function showDetails(pokemon) {
+    console.log(pokemon)
   };
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
@@ -62,8 +62,8 @@ let pokemonRepository = (function () {
     pokemonList.appendChild(listpokemon);
   // call the showDetails function there, passing the pokemon object as a parameter when a Pokémon is clicked, same parameter as addListItem()
     button.addEventListener ('click', function showDetails(listpokemon) {
-    console.log(pokemon.name); 
-    // this is what I changed
+    console.log(pokemon); 
+    // added obect above
   });
 }
   return {
@@ -74,7 +74,7 @@ let pokemonRepository = (function () {
 })();
   
 
-pokemonRepository.add({ name: "Pikachu", height: 0.7, types: ["electric"] });
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
 console.log(pokemonRepository.getAll());
 
