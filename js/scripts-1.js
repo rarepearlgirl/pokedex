@@ -52,7 +52,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemonRepository) {
     console.log(listpokemon)
   };
-  function addListItem(pokemon){
+  function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let listpokemon = document.createElement('li');
     let button = document.createElement('button');
@@ -74,10 +74,10 @@ let pokemonRepository = (function () {
 })();
   
 
-pokemonRepository.add({name: "Pikachu", height: 0.7, types: ["electric"] });
+pokemonRepository.add({ name: "Pikachu", height: 0.7, types: ["electric"] });
 
 console.log(pokemonRepository.getAll());
 
-pokemonRepository.getAll().forEach(function(pokemon){
+pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
