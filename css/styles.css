@@ -82,3 +82,7 @@ body {
 .h1 {
  font-size: 30px; 
 }
+
+.pokemon-list {
+  list-style-type: none;
+}
