@@ -29,29 +29,29 @@ let pokemonRepository = (function () {
           };
           add(pokemon);
         });
-      }).catch(function (e) {
-        console.error(e)
-      });
+      }).catch(function(e) {
+        console.error(error);
+      })
   }
     
-  function loadDetails(item) {
-    let url = item.detailsUrl;
-    return fetch(apiUrl).then(function(response) {
-      return response.json();
-    }).then(function (details) {
-      item.imageUrl = details.sprites.front_default;
-      item.height = details.height;
-      item.types = details.types;
-    }).catch(function (e) {
-      console.error(e)
-    });
-  }
-//function shows details
-function showDetails(pokemon) {
-  loadDetails(pokemon)
-  console.log(pokemon)
-  };
-  
+    function loadDetails(item) {
+      let url = item.detailsUrl;
+        return fetch(url).then(function(response) {
+          return response.json();
+        }).then(function (details) {
+          item.imageUrl = details.sprites.front_default;
+          item.height = details.height;
+          item.types = details.types;
+        }).catch(function (e) {
+          console.error(e);
+        });
+    }
+    //function shows details
+    function showDetails(pokemon) {
+      loadDetails(pokemon)
+      console.log(pokemon)
+      };
+    
     return {
       add: add,
       getAll: getAll,
@@ -63,12 +63,10 @@ function showDetails(pokemon) {
 })();
 
 pokemonRepository.add({ 
-  name: "Pikachu", 
+  name: "pikachu", 
   height: 0.3, 
   types: ["electric"] 
 });
-
-console.log(pokemonRepository.getAll());
 
 function addListItem(pokemon) {
   let pokemonList = document.querySelector('.pokemon-list');
@@ -79,7 +77,6 @@ function addListItem(pokemon) {
   listpokemon.appendChild(button);
   pokemonList.appendChild(listpokemon);
   button.addEventListener ('click', function () {pokemonRepository.showDetails(pokemon)})
-  console.log(pokemon); 
 }
 
 pokemonRepository.loadList().then(function() {
