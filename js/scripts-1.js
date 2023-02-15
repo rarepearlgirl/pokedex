@@ -48,10 +48,14 @@ let pokemonRepository = (function () {
     }
     //function shows details
     function showDetails(pokemon) {
-      loadDetails(pokemon)
+      loadDetails(pokemon).then(function(details) {
+        pokemon.imageUrl = details.sprites.front_default;
+        pokemon.height = details.height;
+        pokemon.types = details.types;
+      }).catch(function (e) {
       console.log(pokemon)
-      };
-    
+      });
+    }
     return {
       add: add,
       getAll: getAll,
@@ -61,12 +65,6 @@ let pokemonRepository = (function () {
       loadDetails: loadDetails
     };
 })();
-
-pokemonRepository.add({ 
-  name: "pikachu", 
-  height: 0.3, 
-  types: ["electric"] 
-});
 
 function addListItem(pokemon) {
   let pokemonList = document.querySelector('.pokemon-list');
