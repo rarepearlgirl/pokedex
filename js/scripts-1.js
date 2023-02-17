@@ -48,12 +48,10 @@ let pokemonRepository = (function () {
     }
     //function shows details
     function showDetails(pokemon) {
-      loadDetails(pokemon).then(function(details) {
-        pokemon.imageUrl = details.sprites.front_default;
-        pokemon.height = details.height;
-        pokemon.types = details.types;
+      loadDetails(pokemon).then(function() {
+        console.log(pokemon);
       }).catch(function (e) {
-      console.log(pokemon)
+        console.error(e);
       });
     }
     return {
