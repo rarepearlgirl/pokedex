@@ -149,6 +149,7 @@ h1 {
 }
 
 .modal-close {
+  align-self: end;
   float: right;
   -webkit-appearance: none;
   border: 0;
