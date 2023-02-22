@@ -53,7 +53,7 @@ let pokemonRepository = (function () {
       }).then(function (details) {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
-        item.types = details.types;
+        item.types = details.types.map((type) => type.type.name);
       }).catch(function (e) {
         console.error(e);
       });
@@ -61,7 +61,7 @@ let pokemonRepository = (function () {
     //function shows details
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function() {
-      showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
+      showModal(pokemon.name, pokemon.height, pokemon.imageUrl, pokemon.types);
     });
   };
 
@@ -78,7 +78,7 @@ let pokemonRepository = (function () {
           }
         }); 
     modalContainer.addEventListener('click', (e) => {
-      // Since this is also triggered when clicking INSIDE the modal
+      // Since this is also triggered when clicking inside the modal
       // We only want to close if the user clicks directly on the overlay
       let target = e.target;
       if (target === modalContainer) {
@@ -87,10 +87,9 @@ let pokemonRepository = (function () {
     });   
   }
 
-  function showModal (title, text, imageUrl) {
+  function showModal (title, text, imageUrl, types) {
     let modalContainer = document.querySelector("#modal-container");
    
-
     modalContainer.innerHTML = "";
     const modal = document.createElement('div');
     modal.classList.add("modal");
@@ -107,24 +106,24 @@ let pokemonRepository = (function () {
     let contentElement = document.createElement("p");
     contentElement.innerText = text;
 
-    // let container = document.querySelector('#image-container');
-    let pokemonImage = document.createElement("img");
+    let pokemonImage = document.createElement("img"); 
+    pokemonImage.classList.add("pokemon-img");
     pokemonImage.src  = imageUrl;
+   
+    let pokemonType = document.createElement("type");
+    pokemonType.innerText  = types;
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
     modal.appendChild(pokemonImage);
+    modal.appendChild(pokemonType);
 
 
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add("is-visible");
   }
-
-  document.querySelector('#show-modal-button').addEventListener('click', () => {
-  showModal("modal title", "modal content");
-});
 
   return {
     add: add,
