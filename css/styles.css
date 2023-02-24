@@ -57,24 +57,12 @@ body {
 
 /* Small devices */
 @media only screen and (max-width: 500px) {
-  .body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
   .modal {
-    width: inherit;
-    max-width: 100%;
+    width: 140px;
   }
-  #modal-container.is-visible {
-    width: inherit;
-    max-width: 100%;
-  }
+
   .pokemon-img {
-  width: 15%;
-  height: 15%;
-  
+  width: 100%;
   }
 }
 
@@ -87,17 +75,15 @@ body {
     justify-content: center;
   }
   .modal {
-    width: inherit;
-    max-width: 100%;
+    width: 50%;
   }
-  #modal-container.is-visible {
-    width: inherit;
-    max-width: 100%;
-  }
-  .pokemon-img {
-  width: 15%;
-  height: 15%;
   
+  #modal-container.is-visible {
+    width: 50%;
+  }
+
+  .pokemon-img {
+  width: 45%;
   }
 }
 
@@ -115,7 +101,7 @@ h1 {
 }
 
 #modal-container.is-visible {
-  background-color: #d78f98;
+  background-color: rgba(215, 143, 152, 0.8);
   box-sizing: border-box;
   display: grid;
   text-align: center;
@@ -139,9 +125,8 @@ h1 {
   justify-content: center;
   margin: auto;
   padding: 15px; 
-  width: 100%;
+  width: 70%;
   max-width: 100%;
-  
 }
 
 #modal-container.is-hidden {
@@ -166,11 +151,7 @@ h1 {
 }
 
 .pokemon-img {
-  width: 15%;
-  height: 15%;
-  margin-right: 80px;
-  margin-left: 80px;
-  margin-top: 80px;
+  width: 45%;
 }
 
 .pokemon-navigation__item {
