@@ -154,6 +154,7 @@ h1 {
   width: 45%;
 }
 
+
 .pokemon-navigation__item {
   display: inline-block;
   color: #000000
@@ -161,4 +162,33 @@ h1 {
 
 .navigation-list {
   color: #000000
+}
+
+.list-group-item {
+
+}
+
+.list-group-item:first-child {
+border-radius: 20px;
+}
+
+.list-group-item:last-child {
+border-radius: 20px;
+}
+
+.list-group-item-action {
+ border-radius: 20px; 
+ background-color: tomato;
+}
+
+.button-class:hover {
+  background-color: tomato;
+}
+
+.btn-primary {
+  background-color: rgb(198, 24, 24);
+}
+
+.btn-primary:hover {
+  background-color: tomato;
 }
