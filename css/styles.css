@@ -17,23 +17,11 @@ body {
 
 .button-class {
   background-color: rgb(60, 164, 95);
-  border: none;
-  border-bottom: 4px solid tomato;
-  border-radius: 20px;
   color: black;
-  cursor: pointer;
-  display: inline-block;
-  font-family: auto;
   font-size: 16px;
-  margin: 4px 2px;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: capitalize;
   height: 10%;
   width: 100%;  
-  /*might delete later*/
-  -webkit-animation-duration: 7s;
+  margin-bottom: 5px;
     animation-duration: 4s;
     -webkit-animation-name: slidein;
     animation-name: slidein;
@@ -57,10 +45,6 @@ body {
 
 /* Small devices */
 @media only screen and (max-width: 500px) {
-  .modal {
-    width: 140px;
-  }
-
   .pokemon-img {
   width: 100%;
   }
@@ -74,13 +58,6 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .modal {
-    width: 50%;
-  }
-  
-  #modal-container.is-visible {
-    width: 50%;
-  }
 
   .pokemon-img {
   width: 45%;
@@ -89,18 +66,18 @@ body {
 
 h1 {
   font-size: 30px; 
-  margin-left: 37px;
+  margin: 20px;
 }
 
 .pokemon-list {
   list-style-type: none;
 }
 
-#modal-container {
+#modal-content {
   display: none;
 }
 
-#modal-container.is-visible {
+#modal-content.is-visible {
   background-color: rgba(215, 143, 152, 0.8);
   box-sizing: border-box;
   display: grid;
@@ -116,20 +93,15 @@ h1 {
   text-transform: capitalize;
 }
 
-.modal {
-  align-items: center;
-  background: rgb(98, 215, 143);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
-  padding: 15px; 
-  width: 70%;
-  max-width: 100%;
+.modal-center {
+ -webkit-transform: translate(0,-50%) !important;
+    -o-transform: translate(0,-50%) !important;
+    transform: translate(0,-50%) !important;
+    top: 50%;
+    margin: 0 auto;
 }
 
-#modal-container.is-hidden {
+#modal-content.is-hidden {
   display: none;
 }
 
@@ -143,10 +115,10 @@ h1 {
   text-decoration: underline;
 } 
 
-.modal h2 { 
+.modal-dialog h2 { 
   margin-top: 0; 
 } 
-.modal p { 
+.modal-dialog p { 
   margin-bottom: 0; 
 }
 
@@ -185,10 +157,14 @@ border-radius: 20px;
   background-color: tomato;
 }
 
-.btn-primary {
+/* .btn-primary {
   background-color: rgb(198, 24, 24);
-}
+} */
 
 .btn-primary:hover {
   background-color: tomato;
+}
+
+a {
+  color: black;
 }
