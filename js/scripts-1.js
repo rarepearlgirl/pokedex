@@ -34,7 +34,7 @@ $(document).ready(function () {
       button.setAttribute("data-whatever", pokemonJSON)
       listpokemon.appendChild(button);
       pokemonList.appendChild(listpokemon);
-      button.addEventListener("click", function(){
+      button.addEventListener("click", function () {
         button.classList.add("btn-primary");
       }
       )
